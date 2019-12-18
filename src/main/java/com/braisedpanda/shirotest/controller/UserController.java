@@ -60,9 +60,7 @@ public class UserController {
         }
         user.setImages("/images/2019-08-07/f8aa0870-e4ea-4170-9772-296204476267.jpg");
         userService.addUser(user);
-
         model.addAttribute("user",user);
-
         return "redirect:/";
     }
 
@@ -150,7 +148,6 @@ public class UserController {
     @RequestMapping("/delete/{uid}")
     public String delete(@PathVariable("uid") String uid){
         userService.delete(uid);
-
         return "user/blank";
     }
 
@@ -160,7 +157,6 @@ public class UserController {
     public ModelAndView getuser(@PathVariable("uid") int uid){
         ModelAndView modelAndView = new ModelAndView();
         User user = userService.getUserByUid(uid);
-
         modelAndView.addObject("user",user);
         modelAndView.setViewName("user/edit");
         return modelAndView;
@@ -198,11 +194,7 @@ public class UserController {
     //修改用户信息
     @RequestMapping("user_edit")
     public String user_edit(User user){
-
-
         userService.edit(user);
-
-
         return "user/success";
     }
 
@@ -250,10 +242,7 @@ public class UserController {
     @RequestMapping("/add_user")
     public String add_user(User user){
         user.setImages("/images/2019-08-07/f8aa0870-e4ea-4170-9772-296204476267.jpg");
-
         userService.addUser(user);
-
-
         return "user/success";
 
 
@@ -269,21 +258,12 @@ public class UserController {
     }
 
 
-
-
-
-
-
-
-
     @RequestMapping("user/table")
     public @ResponseBody Map<String,Object> testtable(int page,int limit){
         int count = userService.getAllUser().size();
         PageHelper.startPage(page,limit);
         List<User> userList1 = userService.getAllUser();
-
         PageInfo<User> userPageInfo = new PageInfo<>(userList1);
-
         List<User> userList = userPageInfo.getList();
         for (User user:
              userList) {
@@ -310,8 +290,6 @@ public class UserController {
         resultMap.put("code",0);
         resultMap.put("msg","");
         resultMap.put("count",count);
-
-
         resultMap.put("data",userList);
         return resultMap;
 
@@ -321,8 +299,6 @@ public class UserController {
 
     @RequestMapping("/userlist2")
     public  String userlist2(){
-
-
         return "user/userlist2";
     }
     //图片上传测试
@@ -395,12 +371,5 @@ public class UserController {
         modelAndView.setViewName("user/userlist2");
         return modelAndView;
     }
-
-
-
-
-
-
-
 
 }
