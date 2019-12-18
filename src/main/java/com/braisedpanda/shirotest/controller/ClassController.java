@@ -74,6 +74,8 @@ public class ClassController {
                 sclass.setArts_teacher(teacherlist[l]);
                 sclass.setSports_teacher(teacherlist[m]);
 
+                //测试提交
+
                 int count = studentService.getStudentConutByCid(classid);
                 sclass.setClass_count(count);
                 classService.addClass(sclass);
