@@ -1,22 +1,21 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.1
-Source Server Version : 50716
+Source Server         : 127.0.0.1
+Source Server Version : 50711
 Source Host           : localhost:3306
-Source Database       : BCMS
+Source Database       : bcms
 
 Target Server Type    : MYSQL
-Target Server Version : 50716
+Target Server Version : 50711
 File Encoding         : 65001
 
-Date: 2019-10-09 18:39:33
+Date: 2019-12-20 01:10:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
--- Table structure for class
+-- Table structure for `class`
 -- ----------------------------
 DROP TABLE IF EXISTS `class`;
 CREATE TABLE `class` (
@@ -123,7 +122,7 @@ INSERT INTO `class` VALUES ('G807', 'G807', '孙顺达', '9', '孙寿康', '马�
 INSERT INTO `class` VALUES ('G808', 'G808', '孙顺达', '15', '贾德善', '张石山', '赵大华', '黄强辉', '马连良', '孙德林 ', '贾德善', '吕文达', '张石山', '汤绍箕', '张志', '孙寿康');
 
 -- ----------------------------
--- Table structure for class_grades
+-- Table structure for `class_grades`
 -- ----------------------------
 DROP TABLE IF EXISTS `class_grades`;
 CREATE TABLE `class_grades` (
@@ -413,7 +412,7 @@ INSERT INTO `class_grades` VALUES ('CGICGCG80820180516', 'CGCG80820180516', '126
 INSERT INTO `class_grades` VALUES ('CGICGCG80820180628', 'CGCG80820180628', '1277', '1490', '1030', '143.0', '63.0', '112', '66.0', '142', '108.0', '146.0', '69.0', '105', '60', '136.0', '108.0', '145.0', '72.0', '106', '84', '143', '65.0', '104.0', '0', '107.0', '148.0', '63.0', '105.0', '149', '62.0', '107.0', '148', '61.0', '104.0', '147', '62.0', '96.0', '137', '116.0', '144.0');
 
 -- ----------------------------
--- Table structure for class_grades_card
+-- Table structure for `class_grades_card`
 -- ----------------------------
 DROP TABLE IF EXISTS `class_grades_card`;
 CREATE TABLE `class_grades_card` (
@@ -668,7 +667,7 @@ INSERT INTO `class_grades_card` VALUES ('CGCG80820180516', 'G808', '2018-05-16',
 INSERT INTO `class_grades_card` VALUES ('CGCG80820180628', 'G808', '2018-06-28', '期末考试');
 
 -- ----------------------------
--- Table structure for nation
+-- Table structure for `nation`
 -- ----------------------------
 DROP TABLE IF EXISTS `nation`;
 CREATE TABLE `nation` (
@@ -738,7 +737,7 @@ INSERT INTO `nation` VALUES ('8', '壮族 ');
 INSERT INTO `nation` VALUES ('9', '布依族 ');
 
 -- ----------------------------
--- Table structure for permission
+-- Table structure for `permission`
 -- ----------------------------
 DROP TABLE IF EXISTS `permission`;
 CREATE TABLE `permission` (
@@ -764,9 +763,10 @@ INSERT INTO `permission` VALUES ('10', 'allpermission', '角色权限一览');
 INSERT INTO `permission` VALUES ('11', 'addrole', '新增权限角色');
 INSERT INTO `permission` VALUES ('12', 'authorize', '授予用户权限');
 INSERT INTO `permission` VALUES ('13', 'allrole', '所有角色一览');
+INSERT INTO `permission` VALUES ('14', 'project_list', '项目列表');
 
 -- ----------------------------
--- Table structure for role
+-- Table structure for `role`
 -- ----------------------------
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
@@ -787,7 +787,7 @@ INSERT INTO `role` VALUES ('9941eea1f4704944b33375984da1ed09', '校长', '校长
 INSERT INTO `role` VALUES ('cccdd017ff3b4f9dba8ff77c7836e1f6', '学生', '学生可以查看学生、班级信息、我的成绩');
 
 -- ----------------------------
--- Table structure for role_permission
+-- Table structure for `role_permission`
 -- ----------------------------
 DROP TABLE IF EXISTS `role_permission`;
 CREATE TABLE `role_permission` (
@@ -808,52 +808,53 @@ CREATE TABLE `role_permission` (
 -- ----------------------------
 -- Records of role_permission
 -- ----------------------------
-INSERT INTO `role_permission` VALUES ('09b2e104b070483e831d8da9a5457f94', '09', 'addstudent', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '添加学生', '超级管理员');
 INSERT INTO `role_permission` VALUES ('10e0c7aa071444ba8eaa17217fe32408', '10', 'allpermission', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '角色权限一览', '普通管理员');
 INSERT INTO `role_permission` VALUES ('12758c0d9246407793be04c0eee79dd8', '06', 'class_list', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '班级列表', '校长');
-INSERT INTO `role_permission` VALUES ('1b755cf660384e798319d512c11f6d92', '03', 'create', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '增加', '超级管理员');
-INSERT INTO `role_permission` VALUES ('22cac62f34d44416b9e94bff662f31f2', '07', 'user_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '用户列表', '超级管理员');
+INSERT INTO `role_permission` VALUES ('1b731ed170e142e28e0e08847bcf5d22', '04', 'delete', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '删除', '超级管理员');
 INSERT INTO `role_permission` VALUES ('235085e363c04dee99c36208711c75f4', '05', 'student_list', '学生可以查看学生、班级信息、我的成绩', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生列表', '学生');
 INSERT INTO `role_permission` VALUES ('301e972b5c8c495a99f98907b2925f89', '08', 'mygrades', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '我的成绩', '校长');
 INSERT INTO `role_permission` VALUES ('373accff7eb1401cababdff0049409d6', '01', 'retrieve', '学生可以查看学生、班级信息、我的成绩', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '查看', '学生');
 INSERT INTO `role_permission` VALUES ('40cab5659d694e9b819cc0c5dc5db923', '05', 'student_list', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '学生列表', '教师');
-INSERT INTO `role_permission` VALUES ('43cc255171774f7684ca8c178434f599', '02', 'update', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '更新', '超级管理员');
 INSERT INTO `role_permission` VALUES ('454e1f4277e84ce3bbdabc867fd2618f', '04', 'delete', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '删除', '普通管理员');
-INSERT INTO `role_permission` VALUES ('46a2a035f8d64698944691aa2871a752', '10', 'allpermission', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '角色权限一览', '超级管理员');
-INSERT INTO `role_permission` VALUES ('49b3d93fac0f4f9885561508f620cf90', '12', 'authorize', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '授予用户权限', '超级管理员');
 INSERT INTO `role_permission` VALUES ('4a1bde303fee4abc9b2a408eac04f385', '04', 'delete', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '删除', '校长');
 INSERT INTO `role_permission` VALUES ('4c606231a5d84338b82f1e6eeae46748', '07', 'user_list', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '用户列表', '普通管理员');
-INSERT INTO `role_permission` VALUES ('4e4ebd6edacc49cf8b0826bda084c34e', '05', 'student_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '学生列表', '超级管理员');
+INSERT INTO `role_permission` VALUES ('4e3a59b14ceb48979fa2d3fe59a0c62e', '08', 'mygrades', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '我的成绩', '超级管理员');
 INSERT INTO `role_permission` VALUES ('5036aaf6eb7f4b44a022e9bff7cc095f', '05', 'student_list', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '学生列表', '普通管理员');
-INSERT INTO `role_permission` VALUES ('563441b1c83548f8811ce17b61c09b6e', '06', 'class_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '班级列表', '超级管理员');
+INSERT INTO `role_permission` VALUES ('5b9426795fb646568827e6fef64f279a', '03', 'create', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '增加', '超级管理员');
 INSERT INTO `role_permission` VALUES ('639d0d690f1548328fc1da74d8a0fd29', '01', 'retrieve', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '查看', '普通管理员');
+INSERT INTO `role_permission` VALUES ('643fec4211674f9385a59566b3bcd927', '14', 'project_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '项目列表', '超级管理员');
 INSERT INTO `role_permission` VALUES ('69c5146420fc439ba57bd4c19c8f276f', '09', 'addstudent', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '添加学生', '普通管理员');
 INSERT INTO `role_permission` VALUES ('6bc1001d28904f129c074918c9fad7ed', '01', 'retrieve', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '查看', '教师');
-INSERT INTO `role_permission` VALUES ('6d7cb459fecc424bb8440ba3ac5b5ed0', '01', 'retrieve', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '查看', '超级管理员');
 INSERT INTO `role_permission` VALUES ('6e8bb4d8a6134cbbb319ead2ca27e17f', '13', 'allrole', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '所有角色一览', '普通管理员');
 INSERT INTO `role_permission` VALUES ('745caa13663c4272805a11af0a6dace1', '03', 'create', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '增加', '校长');
 INSERT INTO `role_permission` VALUES ('7d6b6452654b443f9b933b83eccaea01', '09', 'addstudent', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '添加学生', '校长');
 INSERT INTO `role_permission` VALUES ('8c76720918bf4855bb10bcf6886f8ac5', '06', 'class_list', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '班级列表', '教师');
+INSERT INTO `role_permission` VALUES ('8d03f04601414da3b69b9649df36da49', '09', 'addstudent', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '添加学生', '超级管理员');
 INSERT INTO `role_permission` VALUES ('8dc31cdf9394436ebf85e1f4af6f9f8b', '06', 'class_list', '学生可以查看学生、班级信息、我的成绩', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '班级列表', '学生');
 INSERT INTO `role_permission` VALUES ('91ec4e2487774882a96e98a2d58756c5', '02', 'update', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '更新', '普通管理员');
+INSERT INTO `role_permission` VALUES ('9840ee017f86431f8fe7d5d621db7063', '06', 'class_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '班级列表', '超级管理员');
 INSERT INTO `role_permission` VALUES ('a2007c5afb154156bbfa3f52f905d2eb', '06', 'class_list', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '班级列表', '普通管理员');
+INSERT INTO `role_permission` VALUES ('a395ff15c6224d549aab164557937b59', '05', 'student_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '学生列表', '超级管理员');
+INSERT INTO `role_permission` VALUES ('a50838aa07514960a9994bc6fe50c49e', '10', 'allpermission', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '角色权限一览', '超级管理员');
 INSERT INTO `role_permission` VALUES ('a7ab908a027c4d8cbe8861cf11a3ce49', '01', 'retrieve', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '查看', '校长');
 INSERT INTO `role_permission` VALUES ('a7cead86761c4f5790939fb792684203', '09', 'addstudent', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '添加学生', '教师');
+INSERT INTO `role_permission` VALUES ('b13a5c4ad7fe499dbb5a7e805e6f3bd8', '02', 'update', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '更新', '超级管理员');
 INSERT INTO `role_permission` VALUES ('b1972fc4161f4fbf956bc7c9812e5149', '03', 'create', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '增加', '普通管理员');
-INSERT INTO `role_permission` VALUES ('b81c370181c94dd6b9170830342e7af4', '11', 'addrole', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '新增权限角色', '超级管理员');
+INSERT INTO `role_permission` VALUES ('cb8c1bfbed894430b85b589454c1457f', '13', 'allrole', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '所有角色一览', '超级管理员');
 INSERT INTO `role_permission` VALUES ('cbd2e6c2c99c44318e2c52383163b70f', '03', 'create', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '增加', '教师');
-INSERT INTO `role_permission` VALUES ('d25d5dc599ff4f898bf0eff72a06ec25', '04', 'delete', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '删除', '超级管理员');
 INSERT INTO `role_permission` VALUES ('d45a421563be4b028c07e48e1b797dca', '08', 'mygrades', '普通管理员可以进行查看权限信息，可以进行其他操作', '15a1f25f54864872aa9e75cda0c6e828', '我的成绩', '普通管理员');
 INSERT INTO `role_permission` VALUES ('d79c6d8b77c94229a15d85c34602c7bc', '05', 'student_list', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '学生列表', '校长');
-INSERT INTO `role_permission` VALUES ('df910a65a1224132b1fb02e7212d888a', '08', 'mygrades', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '我的成绩', '超级管理员');
 INSERT INTO `role_permission` VALUES ('e2a8ba4b3c8d4b45b59ce8cf6ba06a83', '02', 'update', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '更新', '教师');
 INSERT INTO `role_permission` VALUES ('ed11bd283271487b82ab22d069bc5136', '08', 'mygrades', '教师可以查看、更新、添加学生等信息', '03c8774b662e4dd29dace9a5c1367e2c', '我的成绩', '教师');
-INSERT INTO `role_permission` VALUES ('f06200b2c4bc44419327ba559fa27696', '13', 'allrole', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '所有角色一览', '超级管理员');
+INSERT INTO `role_permission` VALUES ('ee4c325f86e240b780a801f313408b7b', '12', 'authorize', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '授予用户权限', '超级管理员');
+INSERT INTO `role_permission` VALUES ('ef731f9d13cc4b60affb37796e4015a3', '07', 'user_list', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '用户列表', '超级管理员');
 INSERT INTO `role_permission` VALUES ('f43bf63a79474ccdba8f3fb293616bf9', '08', 'mygrades', '学生可以查看学生、班级信息、我的成绩', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '我的成绩', '学生');
+INSERT INTO `role_permission` VALUES ('f7ae34ced873418db7d2bcabbd34bed9', '01', 'retrieve', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '查看', '超级管理员');
+INSERT INTO `role_permission` VALUES ('f92d79d72a134aa7ab9a4a1e06967823', '11', 'addrole', '超级管理员拥有所有的权限', '559f84f518924e32adcb031f443df649', '新增权限角色', '超级管理员');
 INSERT INTO `role_permission` VALUES ('fef370183ee441f6a390d19d99ee7b1b', '02', 'update', '校长可以进行除权限之外的其他操作', '9941eea1f4704944b33375984da1ed09', '更新', '校长');
 
 -- ----------------------------
--- Table structure for student
+-- Table structure for `student`
 -- ----------------------------
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
@@ -1773,7 +1774,7 @@ INSERT INTO `student` VALUES ('f324541a00d1487582d5e521a192e71c', '朗列', 'sls
 INSERT INTO `student` VALUES ('fb2da854ad3a4974b544ab4f80f9bd4e', '荆轲', '123456', 'jingkeloveqing@163.com', '340123199307735866', '男', '2012-08-09', '汉族', '实习', '23', 'G303', '2019-08-11', '团员', '吉林省长春市宽城区辽宁路772号', '/images/2019-08-14/66451a79-1fd1-4d1a-9f82-521833371732.jpg');
 
 -- ----------------------------
--- Table structure for student_grades
+-- Table structure for `student_grades`
 -- ----------------------------
 DROP TABLE IF EXISTS `student_grades`;
 CREATE TABLE `student_grades` (
@@ -4479,7 +4480,7 @@ INSERT INTO `student_grades` VALUES ('SGISGC3f324541a00d1487582d5e521a192e71c', 
 INSERT INTO `student_grades` VALUES ('SGISGC3fb2da854ad3a4974b544ab4f80f9bd4e', 'SGC3fb2da854ad3a4974b544ab4f80f9bd4e', '1273', '106', '147', '66', '111', '93', '100', '107', '122', '77', '129', '66', '147', '87', '102', '132');
 
 -- ----------------------------
--- Table structure for student_grades_card
+-- Table structure for `student_grades_card`
 -- ----------------------------
 DROP TABLE IF EXISTS `student_grades_card`;
 CREATE TABLE `student_grades_card` (
@@ -7172,7 +7173,7 @@ INSERT INTO `student_grades_card` VALUES ('SGC3f324541a00d1487582d5e521a192e71c'
 INSERT INTO `student_grades_card` VALUES ('SGC3fb2da854ad3a4974b544ab4f80f9bd4e', 'fb2da854ad3a4974b544ab4f80f9bd4e', '2018-06-28', '期末考试');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -7192,10 +7193,10 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'zhangsan', '123', 'zhangsnahaha123@as.com', '2019-08-19', 'woman', '20183004033', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '3');
+INSERT INTO `user` VALUES ('1', 'zhangsan', '123456', 'zhangsnahaha123@as.com', '2019-08-19', 'man', null, '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '3');
 INSERT INTO `user` VALUES ('2', 'student', '123', 'laojuhua@123.com', '2012-08-15', 'man', '20183004347', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '1');
 INSERT INTO `user` VALUES ('3', 'teacher', '123', 'shanshanWang@163.com', '2015-08-06', 'woman', '20183004401', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '2');
-INSERT INTO `user` VALUES ('4', 'schoolmaster', '123', 'testuser-007@qq.com', '2019-08-17', 'woman', '20183004447', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '3');
+INSERT INTO `user` VALUES ('4', 'xiaozhang', '123456', 'testuser-007@qq.com', '2019-08-17', 'man', null, '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '3');
 INSERT INTO `user` VALUES ('5', 'admin', '123456', 'asdasa@asd.com', '2019-08-06', 'man', '20183004485', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', '1');
 INSERT INTO `user` VALUES ('6', '王二麻', '124365', 'ermawang@qq.com', '2019-07-28', 'woman', '20183004534', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', null);
 INSERT INTO `user` VALUES ('7', '赵晓丽', 'zhao123456', 'zhaoxiaoli@163.com', '2019-08-01', 'woman', '20183004676', '/images/2019-08-02/5705f0d1-4627-4f76-a630-9193866655fb.jpg', null);
@@ -7212,7 +7213,7 @@ INSERT INTO `user` VALUES ('17', 'wangxiaojiu', '123456', 'wangxiaojiu@qq.com', 
 INSERT INTO `user` VALUES ('18', '貂小蝉', '123456', 'diaoxiaochan@year.com', '2008-08-09', '女', '20183006232', '/images/2019-08-14/64ebd48d-56cb-43dc-b050-3fa74a27a378.jpg', null);
 
 -- ----------------------------
--- Table structure for user_role
+-- Table structure for `user_role`
 -- ----------------------------
 DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE `user_role` (
@@ -7234,14 +7235,14 @@ CREATE TABLE `user_role` (
 -- ----------------------------
 INSERT INTO `user_role` VALUES ('04d192f6a9c945f3a5a76e6a8ee84c8c', '学生', '18', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', '貂小蝉');
 INSERT INTO `user_role` VALUES ('16928b943ba947ab9dda3dd8f7b68504', '教师', '3', '03c8774b662e4dd29dace9a5c1367e2c', '教师可以查看、更新、添加学生等信息', 'teacher');
-INSERT INTO `user_role` VALUES ('4b174379475d420c9fa8b069334ad676', '普通管理员', '5', '15a1f25f54864872aa9e75cda0c6e828', '普通管理员可以进行查看权限信息，可以进行其他操作', 'admin');
+INSERT INTO `user_role` VALUES ('4b174379475d420c9fa8b069334ad676', '普通管理员', '5', '15a1f25f54864872aa9e75cda0c6e828', '普通管理员可以进行查看权限信息，可以进行其他操作', 'xiaozhang');
 INSERT INTO `user_role` VALUES ('63ea2178dfe14a7c8af414feba8c7655', '超级管理员', '1', '559f84f518924e32adcb031f443df649', '超级管理员拥有所有的权限', 'zhangsan');
 INSERT INTO `user_role` VALUES ('66df8dd8b5854797afd520807c750751', '学生', '2', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', 'student');
 INSERT INTO `user_role` VALUES ('74f9fb55bd654bd89c22c374bb125d37', '学生', '9', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', 'test002');
 INSERT INTO `user_role` VALUES ('8607fb20cdd149029b244cba5bf1f265', '学生', '14', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', '赵小六');
 INSERT INTO `user_role` VALUES ('8648ebd2951c4eaab6fce015f9bb784b', '教师', '7', '03c8774b662e4dd29dace9a5c1367e2c', '教师可以查看、更新、添加学生等信息', '赵晓丽');
 INSERT INTO `user_role` VALUES ('c09dff2eb11e4bd19132e06177aa78bb', '学生', '8', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', 'test001');
-INSERT INTO `user_role` VALUES ('c8fb2bbcd38f4114b5af3f09384f1b69', '校长', '4', '9941eea1f4704944b33375984da1ed09', '校长可以进行除权限之外的其他操作', 'schoolmaster');
+INSERT INTO `user_role` VALUES ('c8fb2bbcd38f4114b5af3f09384f1b69', '校长', '4', '9941eea1f4704944b33375984da1ed09', '校长可以进行除权限之外的其他操作', 'xiaozhang');
 INSERT INTO `user_role` VALUES ('ee2600dd16e94f55b88733892e157143', '学生', '12', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', '秦王');
 INSERT INTO `user_role` VALUES ('f02708c3452f47d3b028c9666197b303', '学生', '15', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', '司马小懿');
 INSERT INTO `user_role` VALUES ('f0b3dc955e454035b5e38800f06a15bb', '学生', '16', 'cccdd017ff3b4f9dba8ff77c7836e1f6', '学生可以查看学生、班级信息、我的成绩', 'wanglaojiu');

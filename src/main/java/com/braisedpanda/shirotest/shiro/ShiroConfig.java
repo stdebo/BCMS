@@ -43,6 +43,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/user/toadd/**", "perms[create]");
         filterChainDefinitionMap.put("/student/toeditstudent/**", "perms[update]");
 
+        filterChainDefinitionMap.put("/project/delete/**","perms[delete]");
+        filterChainDefinitionMap.put("/project/toadd/**", "perms[create]");
+        filterChainDefinitionMap.put("/project/toeditproject/**", "perms[update]");
 
 
         //主要这行代码必须放在所有权限设置的最后，不然会导致所有 url 都被拦截 剩余的都需要认证

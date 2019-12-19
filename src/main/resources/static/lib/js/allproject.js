@@ -78,10 +78,10 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         elem: '#demo'
         ,height: 800
         ,limit:'20'
-        ,url: 'student/all' //数据接口
+        ,url: 'project/all' //数据接口
         ,title: '用户表'
         ,page: true //开启分页
-        ,title:'学生信息表'
+        ,title:'项目信息表'
         ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
 
         ,cols: [ [ //表头
@@ -117,7 +117,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
             ,data = checkStatus.data; //获取选中的数据
         switch(obj.event){
             case 'add':
-                var url = 'toaddstudent'
+                var url = 'toaddproject'
                 $(window).attr('location',url);
                 break;
             case 'update':
@@ -128,7 +128,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 } else {
                     var userdata =  data[0];
                     var stu_id = userdata.stu_id;
-                    var url = 'student/toeditstudent/'+stu_id
+                    var url = 'student/toeditproject/'+stu_id
                     $(window).attr('location',url);
 
                 }
@@ -143,7 +143,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
 
                             $.ajax({
                                 type:"post",
-                                url:'student/delete/'+stu_id
+                                url:'project/delete/'+stu_id
 
                             });
                             // window.location.reload();
@@ -171,7 +171,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
 
                 $.ajax({
                     type:"post",
-                    url:'student/delete/'+stu_id
+                    url:'project/delete/'+stu_id
 
                 });
 
@@ -180,7 +180,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
             });
         } else if(layEvent === 'edit'){
             var stu_id = data.stu_id;
-            var url = 'student/toeditstudent/'+stu_id
+            var url = 'project/toeditproject/'+stu_id
             $(window).attr('location',url);
 
 

@@ -88,10 +88,10 @@
     <ul class="layui-nav layui-nav-tree  layui-nav-side" lay-filter="test" id="left">
         <li class="title"><a th:href="@{/index}" style="font-size:18px;font-family: 'Century Gothic';color: #bce8f1">Designed by Layui</a></li>
         <li class="layui-nav-item layui-nav-itemed">
-            <a href="javascript:;">项目管理</a>
+            <a href="javascript:;">基本信息</a>
             <dl class="layui-nav-child" >
-                <shiro:hasPermissions name="project_list">
-                    <dd class="main_left"><a  data-src="/toprojectlist"  target="_top" >项目列表</a></dd>
+                <shiro:hasPermissions name="student_list">
+                    <dd class="main_left"><a  data-src="/tostudentlist"  target="_top" >学生列表</a></dd>
                 </shiro:hasPermissions>
 
                 <shiro:hasPermission name="class_list">
@@ -103,32 +103,24 @@
 
                 </shiro:hasPermission>
 
+
                 <dd class="main_left"><a data-src="/userlist/1" target="_top">无授权测试</a></dd>
 
+
+
             </dl>
-        </li> <li class="layui-nav-item layui-nav-itemed">
-        <a href="javascript:;">基本信息</a>
-        <dl class="layui-nav-child" >
-            <shiro:hasPermissions name="student_list">
-                <dd class="main_left"><a  data-src="/tostudentlist"  target="_top" >学生列表</a></dd>
-            </shiro:hasPermissions>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">项目管理</a>
+            <dl class="layui-nav-child">
+                <shiro:hasPermission name="project_list">
+                    <dd class="main_left"><a data-src="/toprojectlist" target="_top">项目列表</a></dd>
+                </shiro:hasPermission>
 
-            <shiro:hasPermission name="class_list">
-                <dd class="main_left"><a data-src="/toclasslist" target="_top">班级列表</a></dd>
-            </shiro:hasPermission>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">aaaaaaa</a></dd>
 
-            <shiro:hasPermission name="user_list">
-                <dd class="main_left"><a data-src="/userlist2" target="_top">用户列表</a></dd>
-
-            </shiro:hasPermission>
-
-
-            <dd class="main_left"><a data-src="/userlist/1" target="_top">无授权测试</a></dd>
-
-
-
-        </dl>
-    </li>
+            </dl>
+        </li>
         <li class="layui-nav-item">
             <a href="javascript:;">成绩统计</a>
             <dl class="layui-nav-child">
