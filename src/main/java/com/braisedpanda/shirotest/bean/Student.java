@@ -11,7 +11,7 @@ public class Student implements Serializable {
     private String stu_id_card;         //身份证号码
     private String stu_sex;             //性别
     private String stu_birthday;        //生日
-    private String nation_name;           //名族
+    private String nation_name;         //名族
     private String stu_status;          //入学状态
     private String stu_age;             //年龄
     private String class_id;            //班级标号

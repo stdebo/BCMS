@@ -90,8 +90,8 @@
         <li class="layui-nav-item layui-nav-itemed">
             <a href="javascript:;">项目管理</a>
             <dl class="layui-nav-child" >
-                <shiro:hasPermissions name="student_list">
-                    <dd class="main_left"><a  data-src="/tostudentlist"  target="_top" >项目列表</a></dd>
+                <shiro:hasPermissions name="project_list">
+                    <dd class="main_left"><a  data-src="/toprojectlist"  target="_top" >项目列表</a></dd>
                 </shiro:hasPermissions>
 
                 <shiro:hasPermission name="class_list">
@@ -103,10 +103,7 @@
 
                 </shiro:hasPermission>
 
-
                 <dd class="main_left"><a data-src="/userlist/1" target="_top">无授权测试</a></dd>
-
-
 
             </dl>
         </li> <li class="layui-nav-item layui-nav-itemed">
