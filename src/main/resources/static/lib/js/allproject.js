@@ -128,7 +128,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
                 } else {
                     var userdata =  data[0];
                     var stu_id = userdata.stu_id;
-                    var url = 'student/toeditproject/'+stu_id
+                    var url = 'project/toeditproject/'+stu_id
                     $(window).attr('location',url);
 
                 }

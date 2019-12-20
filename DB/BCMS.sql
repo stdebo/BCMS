@@ -1,19 +1,40 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50711
-Source Host           : localhost:3306
+Source Server         : 10.204.125.162
+Source Server Version : 50720
+Source Host           : 10.204.125.162:3306
 Source Database       : bcms
 
 Target Server Type    : MYSQL
-Target Server Version : 50711
+Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2019-12-20 01:10:25
+Date: 2019-12-20 10:32:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `bcms_project`
+-- ----------------------------
+DROP TABLE IF EXISTS `bcms_project`;
+CREATE TABLE `bcms_project` (
+  `project_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '项目增长ID',
+  `GUID` varchar(255) DEFAULT NULL,
+  `project_name` varchar(255) DEFAULT NULL COMMENT '项目名称',
+  `status` int(11) DEFAULT NULL COMMENT '状态 0 开启 1 关闭',
+  `create_date` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '项目创建日期',
+  `create_user` int(11) DEFAULT NULL COMMENT '项目创建人',
+  `project_version` int(11) DEFAULT NULL COMMENT '项目版本号',
+  `remark` varchar(2000) DEFAULT NULL,
+  PRIMARY KEY (`project_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bcms_project
+-- ----------------------------
+
 -- ----------------------------
 -- Table structure for `class`
 -- ----------------------------
