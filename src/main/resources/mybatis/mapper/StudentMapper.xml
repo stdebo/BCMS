@@ -6,9 +6,7 @@
 
 
     <!--添加学生-->
-    <insert id="addStudent" parameterType="com.braisedpanda.shirotest.bean.Student"
-
-    >
+    <insert id="addStudent" parameterType="com.braisedpanda.shirotest.bean.Student">
         insert into student
         (stu_id,
         stu_name,
@@ -91,20 +89,10 @@
         select count(*) from student where class_id=#{class_id}
     </select>
 
-
-
     <select id="getStudentByClassId" resultType="com.braisedpanda.shirotest.bean.Student">
 
         select * from student where class_id = #{class_id}
 
     </select>
-
-
-
-
-
-
-
-
 
 </mapper>

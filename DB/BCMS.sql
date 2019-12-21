@@ -26,7 +26,7 @@ CREATE TABLE `bcms_project` (
   `project_version` int(11) DEFAULT NULL COMMENT '项目版本号',
   `status` int(11) DEFAULT NULL COMMENT '状态 0 开启 1 关闭',
   `create_date` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '项目创建日期',
-  `create_user` int(11) DEFAULT NULL COMMENT '项目创建人',
+  `create_user` varchar(255) DEFAULT NULL COMMENT '项目创建人',
   `remark` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

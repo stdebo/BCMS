@@ -15,9 +15,8 @@ public interface StudentService {
     @CacheEvict(value="student",allEntries = true,key="'addStudent:'+#student.stu_id")
     void addStudent(Student student);
 
-
-
     List<Student> getAllStudent();
+
     @CacheEvict(value = "student" ,allEntries = true,key="'delete:'+#stu_id")
     void delete(String stu_id);
 
