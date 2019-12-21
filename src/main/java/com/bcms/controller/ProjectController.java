@@ -40,30 +40,4 @@ public class ProjectController {
 
     }
 
-    @RequestMapping("/toprojectlist")
-    public @ResponseBody
-    Map<String,Object> toprojectlist(int page, int limit){
-        /*
-        int count = studentService.getAllStudent().size();
-        PageHelper.startPage(page,limit);
-        List<Student> studentList1 = studentService.getAllStudent();
-
-        PageInfo<Student> studentPageInfo = new PageInfo<>(studentList1);
-
-        List<Student> studentList = studentPageInfo.getList();
-        */
-        int count = 0;
-        PageHelper.startPage(page,limit);
-        List<Project> projectList = null;
-
-        Map<String,Object> resultMap = new HashMap<String,Object>();
-        resultMap.put("code",0);
-        resultMap.put("msg","");
-        resultMap.put("count",count);
-
-
-        resultMap.put("data",projectList);
-        return resultMap;
-
-    }
 }

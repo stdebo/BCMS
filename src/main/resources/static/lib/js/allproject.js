@@ -9,7 +9,7 @@ $(function () {
 
     //查看项目信息
 
-    studentdetail = function(data){
+    projectdetail = function(data){
         layui.use('layer', function(){
             var layer = layui.layer;
 
@@ -79,7 +79,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         ,height: 800
         ,limit:'20'
         ,url: 'project/all' //数据接口
-        ,title: '用户表'
+        ,title: '项目表'
         ,page: true //开启分页
         ,title:'项目信息表'
         ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档

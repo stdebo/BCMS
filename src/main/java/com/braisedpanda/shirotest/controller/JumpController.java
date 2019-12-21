@@ -66,6 +66,11 @@ public class JumpController {
         return "class/classgrades";
     }
 
+    @RequestMapping("toprojectlist")
+    public String toprojectlist(){
+        return "project/allproject";
+    }
+
 
 
 }
