@@ -87,7 +87,33 @@
 <div class="left" th:fragment="leftbar">
     <ul class="layui-nav layui-nav-tree  layui-nav-side" lay-filter="test" id="left">
         <li class="title"><a th:href="@{/index}" style="font-size:18px;font-family: 'Century Gothic';color: #bce8f1">Designed by Layui</a></li>
+
         <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">项目管理</a>
+            <dl class="layui-nav-child">
+                <shiro:hasPermission name="project_list">
+                    <dd class="main_left"><a data-src="/toprojectlist" target="_top">项目列表</a></dd>
+                </shiro:hasPermission>
+
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Eureka注册中心</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Ribbon负载均衡</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Feign接口调用</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Hystrix熔断降级</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">DashBoard监控服务</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Turbine聚合监控</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Zuul路由网关管理</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">oAuth2统一认证</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Bus服务总线</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">Stream流式消息传递</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">MQ消息队列</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">高速缓存管理</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">通讯安全管理</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">分布式日志管理</a></dd>
+                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">分布式调度管理</a></dd>
+
+            </dl>
+        </li>
+        <li class="layui-nav-item">
             <a href="javascript:;">基本信息</a>
             <dl class="layui-nav-child" >
                 <shiro:hasPermissions name="student_list">
@@ -107,17 +133,6 @@
                 <dd class="main_left"><a data-src="/userlist/1" target="_top">无授权测试</a></dd>
 
 
-
-            </dl>
-        </li>
-        <li class="layui-nav-item">
-            <a href="javascript:;">项目管理</a>
-            <dl class="layui-nav-child">
-                <shiro:hasPermission name="project_list">
-                    <dd class="main_left"><a data-src="/toprojectlist" target="_top">项目列表</a></dd>
-                </shiro:hasPermission>
-
-                <dd class="main_left"> <a data-src="/aaaaaaa" target="_top">aaaaaaa</a></dd>
 
             </dl>
         </li>

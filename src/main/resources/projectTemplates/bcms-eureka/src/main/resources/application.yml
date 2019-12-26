@@ -1,0 +1,17 @@
+# 单例配置
+spring:
+  application:
+    name: bcms-eureka
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #当前服务部注册在eureka中
+    fetch-registry: false #不通过eureka获取注册信息
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  server:
+    eviction-interval-timer-in-ms: 60000 #设置服务清理时间
+    enable-self-preservation: true # 设置是否启用保护模式 false关闭
