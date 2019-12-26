@@ -17,6 +17,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<Project> getAllProject() {
         List<Project> projectList = projetMapper.getAllProject();
+        //测试
         return projectList;
     }
 
